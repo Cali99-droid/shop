@@ -1,11 +1,11 @@
 import { Box, Divider, Drawer, IconButton, Input, InputAdornment, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader } from "@mui/material"
 import { AccountCircleOutlined, AdminPanelSettings, CategoryOutlined, ConfirmationNumberOutlined, EscalatorWarningOutlined, FemaleOutlined, LoginOutlined, MaleOutlined, SearchOutlined, VpnKeyOutlined } from "@mui/icons-material"
-
+import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 
 export const SideMenu = () => {
   return (
     <Drawer
-        open={ true }
+        open={ false }
         anchor='right'
         sx={{ backdropFilter: 'blur(4px)', transition: 'all 0.5s ease-out' }}
     >
@@ -35,6 +35,13 @@ export const SideMenu = () => {
                     </ListItemIcon>
                     <ListItemText primary={'Perfil'} />
                 </ListItemButton>
+                <ListItemButton>
+                    <ListItemIcon>
+                        <AccessAlarmIcon/>
+                    </ListItemIcon>
+                    <ListItemText primary={'Perfil'} />
+                </ListItemButton>
+
 
                 <ListItemButton>
                     <ListItemIcon>
