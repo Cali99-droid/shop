@@ -25,7 +25,7 @@ export const CartList:FC<Props> = ({editable}) => {
               <Link>
               <CardActionArea>
                 <CardMedia   
-                image={`products/${product.images[0]}`}
+                image={`/products/${product.images[0]}`}
                 component='img'
                 sx={{borderRadius:'5px'}}
                 />
@@ -44,7 +44,7 @@ export const CartList:FC<Props> = ({editable}) => {
               {
                 editable
                 ?<ItemCounter/>
-                : <Typography variant='h5'>3</Typography>
+                : <Typography variant='h5'>Items 3</Typography>
               }
               
               

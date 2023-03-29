@@ -4,9 +4,15 @@ import {AppBar, Link, Toolbar, Box, Button,IconButton} from '@mui/material/'
 import { Typography } from '@mui/material';
 import { SearchOutlined,ShoppingCartOutlined } from '@mui/icons-material';
 import Badge from '@mui/material/Badge';
+import { useRouter } from 'next/router';
+import { useContext } from 'react';
+import { UiContext } from '@/context';
+
 
 
 export const Navbar = () => {
+    const {asPath} = useRouter();
+    const {toggleSideMenu} = useContext(UiContext)
   return (
     <AppBar>
         <Toolbar>
@@ -20,27 +26,26 @@ export const Navbar = () => {
             <Box flex={1} />
 
             <Box sx={{display:{xs:'none', sm:'block'}}}>                
-                <NextLink href={'category/men'} passHref legacyBehavior>
+                <NextLink href={'/category/men'} passHref legacyBehavior>
                     <Link>
-                        <Button>
+                        <Button color={asPath === '/category/men' ? 'info':'primary'}>
                             Hombres
                         </Button>
                     </Link>
-
                 </NextLink>
 
-                <NextLink href={'category/women'} passHref legacyBehavior>
+                <NextLink href={'/category/women'} passHref legacyBehavior>
                     <Link>
-                        <Button>
+                        <Button color={asPath === '/category/women' ? 'info':'primary'}>
                             Mujeres
                         </Button>
                     </Link>
 
                 </NextLink>
 
-                <NextLink href={'category/kid'} passHref legacyBehavior>
+                <NextLink href={'/category/kid'} passHref legacyBehavior>
                     <Link>
-                        <Button>
+                        <Button color={asPath === '/category/kid' ? 'info':'primary'}>
                             Niños
                         </Button>
                     </Link>
@@ -66,7 +71,7 @@ export const Navbar = () => {
 
             </NextLink>
 
-            <Button>
+            <Button onClick={toggleSideMenu}>
                 Menu
             </Button>
 
